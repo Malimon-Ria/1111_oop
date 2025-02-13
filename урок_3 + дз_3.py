@@ -6,7 +6,15 @@ class Student:
         self.progress = 10
         self.gladness = 50
         self.alive = True
-        self.money = 600
+        self.money = 1000
+
+    def shopping(self):
+        if self.money >= 50:
+            self.money -= 100
+            self.gladness += 3
+            print('Я пішов у магазин1!')
+        else:
+            print('У мене не вистачає грошей ьреба іти працювати!')
 
     def money(self):
         money = 600
@@ -60,20 +68,22 @@ class Student:
         print()
         print(f' ----- День №{day+1} -----')
         print(f'Привіт, я {self.name},і я сьогодні: ')
-        rnd = random.randint(1,3)
+        rnd = random.randint(1,4)
         if rnd == 1:
             self.study()
         elif rnd == 2:
             self.sleep()
         elif rnd == 3:
             self.chill()
+        elif rnd == 4:
+            self.shopping()
         self.info()
         self.is_alive()
 
 
 
 student = Student("Jorik")
-for day in range(365):
+for day in range(730):
     if student.alive == False:
         break
     student.live(day)
