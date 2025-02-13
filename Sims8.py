@@ -126,7 +126,7 @@ class House:
 
 
 human = Human("Vasya", job=Job("Програміст", 1000), house=House())
-human.buy_car('BMW X2 XDRIVE28I 2020',9900)
+human.buy_car('БМВ',9900)
 for day in range(1, 366):
     if human.is_alive() == False:
         break
